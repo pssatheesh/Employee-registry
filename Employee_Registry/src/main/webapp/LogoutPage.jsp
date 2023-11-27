@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>www.oops.com</title>
+<link rel="icon" href="C:\Users\welcome\Documents\pss.png">
 </head>
 <body>
 <h1 align="center">Logout Successfully</h1>

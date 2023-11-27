@@ -8,29 +8,25 @@
 <link rel="icon" href="C:\Users\welcome\Documents\pss.png">
 </head>
 <body bgcolor="#b5f6f7">
-<h1 align="center">Visitor Registration Form</h1>
+<h1 align="center">Employee Registration Form</h1>
 
-<form onsubmit="return valid()">
+<form>
 <table>
 <tr>
 <td>Enter the Name  : </td>
 <td><input type="text" name="name" required></td>
 </tr>
 <tr>
-<td>Enter the Reason  : </td>
-<td><input type="text" name="reason" required></td>
-</tr>
-<tr>
-<td>Enter the ID number : </td>
-<td><input type="text" name="id" required></td>
+<td>Enter the Employee ID : </td>
+<td><input type="text" name="id"></td>
 </tr>
 <tr>
 <td>Mobile No : </td>
-<td><input type="text" name="mob" id="mobile"><span id="er2"></span></td>
+<td><input type="text" name="mob"></td>
 </tr>
 <tr>
-<td>Coming From : </td>
-<td><input type="text" name="address"></td>
+<td>Company Name : </td>
+<td><input type="text" name="company"></td>
 </tr>
 <tr>
 <td>In Date & Time : </td>
@@ -47,26 +43,25 @@
 <%
 String b=request.getParameter("btn");
 if(b!=null&& b.equals("Register")){
-	int vid=Integer.parseInt(request.getParameter("id"));
-	String vname=request.getParameter("name");
-	String vreason=request.getParameter("reason");
-	String vmobile=request.getParameter("mob");
-	String vaddress=request.getParameter("address");
-	String vIndate=request.getParameter("Indate");
-	String vIntime=request.getParameter("Intime");
+	int eid=Integer.parseInt(request.getParameter("id"));
+	String ename=request.getParameter("name");
+	String emobile=request.getParameter("mob");
+	String ecompany=request.getParameter("company");
+	String eIndate=request.getParameter("Indate");
+	String eIntime=request.getParameter("Intime");
 %>
-<jsp:useBean id="obj" class="com.zoho.DatabaseCode"/>
+<jsp:useBean id="obj" class="com.zoho.EmployeeCode"/>
 <h3 align="center">
+<a href="EmployeeView.jsp">Click Here to View !!!</a>
 <%
-	int r=obj.VisitorInsert(vid, vname, vreason, vmobile,vaddress,vIndate,vIntime);
+	int r=obj.EmployeeInsert(eid, ename, emobile, ecompany,eIndate,eIntime);
 	out.print((r>0)?"Registered":"Not Registered");
 %>
-<a href="VisitorView.jsp">Click Here to View !!!</a>
+
 <%	
 }
 %>
 </h3>
 </form>
-<script src="validation.js"></script>
 </body>
 </html>

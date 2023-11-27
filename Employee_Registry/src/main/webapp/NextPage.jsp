@@ -6,19 +6,16 @@
 <meta charset="ISO-8859-1">
 <title>www.oops.com</title>
 <link rel="icon" href="C:\Users\welcome\Documents\pss.png">
-<style>
-
-</style>
 </head>
 <body bgcolor="#b5f6f7">
 <form>
 <table align="center">
-<tr><td><button><a href="NextPage.jsp">Employee</a></button></td></tr>
-<tr><td><button><a href="VisitorDetails.jsp">Visitor</a></button></td></tr>
+<tr><td><button><a href="EmployeeDetails.jsp">Profile Register</a></button></td></tr>
+<tr><td><button><a href="ExistingEmployee.jsp">Existing Employee</a></button></td></tr>
 <tr><td><button><a href="LogoutPage.jsp">Logout</a></button></td></tr>
 </table>
 </form>
-<jsp:useBean id="dbobj" class="com.zoho.DatabaseCode"></jsp:useBean>
+<jsp:useBean id="dbobj" class="com.zoho.EmployeeCode"></jsp:useBean>
 
 </body>
 </html>

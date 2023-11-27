@@ -4,12 +4,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>www.oops.com</title>
+<link rel="icon" href="C:\Users\welcome\Documents\pss.png">
 </head>
 <%@page import="java.util.Stack" %>
 <%@page import="com.zoho.Visitor" %>
 <body bgcolor="#b5f6f7">
-<jsp:useBean id="dbobj" class="com.zoho.DatabaseCode"></jsp:useBean>
+<jsp:useBean id="dbobj" class="com.zoho.EmployeeCode"></jsp:useBean>
 <%--Delete --%>
 <%
 	String b=request.getParameter("ch");
@@ -21,27 +22,27 @@
 %>
 <%--Select --%>
 <%
-	Stack<Visitor> vis=dbobj.select();
+	Stack<Employee> emp=dbobj.select();
 %>
 <h1 align="center">Registered Employee Details</h1>
 <button><a href="LogoutPage.jsp">Logout</a></button>
 <br>
 <table align="center" border="1" rules="all" cellspacing="10" cellpadding="10">
-	<tr><th>Visitor ID</th><th>Visitor Name</th>
-		<th> Reason</th><th>Visitor Mobile</th>
-		<th>Visitor Address</th><th>Visitor InDate</th>
+	<tr><th>Registered ID</th><th>Employee ID</th>
+		<th> Employee Name</th><th>Mobile</th>
+		<th>Company</th><th>Visitor InDate</th>
 		<th>Visitor InTime</th><th>Visitor OutDate</th>
 		<th>Visitor OutTime</th><th colspan="2">Process</th></tr>
 <%
-	for(Visitor i:vis){
+	for(Employee i:emp){
 %>		
-	<tr><td><%=i.getVid() %></td><td><%=i.getVname() %></td>	
-		<td><%=i.getVreason() %></td><td><%=i.getVmobile() %></td>		
-		<td><%=i.getVaddress() %></td><td><%=i.getvIndate() %></td>
-		<td><%=i.getvIntime() %></td><td><%=i.getvOutdate() %></td>
+	<tr><td><%=i.geterid() %></td><td><%=i.geteid() %></td>	
+		<td><%=i.getename() %></td><td><%=i.getemobile() %></td>		
+		<td><%=i.getecompany() %></td><td><%=i.geteIndate() %></td>
+		<td><%=i.geteIntime() %></td><td><%=i.geteOutdate() %></td>
 		<td><%=i.getvOuttime() %></td>
-		<td><a href="VisitorUpdate.jsp?ch=edit&vid=<%=i.getVid() %>">Update</a></td>
-		<td><a href="VisitorView.jsp?ch=del&vid=<%=i.getVid()%>">Remove Employee</a></td>
+		<td><a href="EmployeeUpdate.jsp?ch=edit&vid=<%=i.getVid() %>">Update</a></td>
+		<td><a href="EmployeeView.jsp?ch=del&vid=<%=i.getVid()%>">Remove Employee</a></td>
 		</tr>			
 <%		
 	}
