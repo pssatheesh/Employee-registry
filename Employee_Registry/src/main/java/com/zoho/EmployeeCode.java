@@ -9,6 +9,7 @@ import java.util.Stack;
 
 
 
+
 public class EmployeeCode {
 	String url="jdbc:mysql://localhost:3306/zoho";
 	String user="root";
@@ -45,7 +46,7 @@ public class EmployeeCode {
 	public int EmployeeInsert(int eid, String ename, String emobile, String ecompany, String eIndate, String eIntime) {
 		int n=0;
 		try {
-			String q="insert into visitordetails(eid,ename,emobile,ecompany,eIndate,eIntime) values(?,?,?,?,?,?)";
+			String q="insert into employeedetails(eid,ename,emobile,ecompany,eIndate,eIntime) values(?,?,?,?,?,?)";
 			PreparedStatement pst=con.prepareStatement(q);
 			pst.setInt(1, eid);
 			pst.setString(2, ename);
@@ -149,6 +150,54 @@ public class EmployeeCode {
 					}
 					return n;
 			}
+				
+				//Employee view
+				public Stack<ExistingEmployee> EEselect() {
+					Stack<ExistingEmployee> st=new Stack<ExistingEmployee>();
+						try {
+							String q="select *from dailyregister";
+							PreparedStatement pst=con.prepareStatement(q);
+							ResultSet rs=pst.executeQuery();
+							
+							while(rs.next()) {
+								int eid=rs.getInt("eid");
+								String eIndate=rs.getString("eIndate");
+								String eIntime=rs.getString("eIntime");
+								String eOutdate=rs.getString("eOutdate");
+								String eOuttime=rs.getString("eOuttime");
+								
+								ExistingEmployee employee=new ExistingEmployee(eid, eIndate, eIntime, eOutdate, eOuttime);
+								st.add(employee);
+							}			
+						}catch(SQLException e) {
+							System.out.println(e);
+						}
+						return st;
+				}
+			
+				//Specific id
+				public Stack<ExistingEmployee> FetchingEmployee(int id) {
+					Stack<ExistingEmployee> st=new Stack<ExistingEmployee>();
+						try {
+							String q="select *from dailyregister where eid=?";
+							PreparedStatement pst=con.prepareStatement(q);
+							pst.setInt(1, id);	
+							ResultSet rs=pst.executeQuery();
+							
+							while(rs.next()) {
+								int eid=rs.getInt("eid");
+								String eIndate=rs.getString("eIndate");
+								String eIntime=rs.getString("eIntime");
+								String eOutdate=rs.getString("eOutdate");
+								String eOuttime=rs.getString("eOuttime") ;
+								ExistingEmployee emp=new ExistingEmployee(eid, eIndate, eIntime, eOutdate, eOuttime);
+								st.add(emp);
+							}			
+						}catch(SQLException e) {
+							System.out.println(e);
+						}
+						return st;
+				}
 				
 
 }

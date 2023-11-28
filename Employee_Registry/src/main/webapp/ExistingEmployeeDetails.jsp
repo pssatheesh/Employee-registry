@@ -4,6 +4,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<%@page import="java.util.Stack" %>
+<%@page import="com.zoho.ExistingEmployee" %>
 <title>www.oops.com</title>
 <link rel="icon" href="C:\Users\welcome\Documents\pss.png">
 </head>
@@ -28,15 +30,9 @@
 <td><input type="reset" value="Clear All"></td>
 </tr>
 </table>
-<form>
-<table align="center">
-<tr>
-<td>Enter the Employee ID : </td>
-<td><input type="text" name="id"></td>
-<td><input type="submit" value="Search" name="search"></td>
-</tr>
-</table></form>
 <h3 align="center"><a href="LogoutPage.jsp">Logout</a></h3>
+<h3 align="center">
+<a href="EEView.jsp">Click Here to View !!!</a>
 <%
 String b=request.getParameter("btn");
 if(b!=null&& b.equals("Register")){
@@ -45,16 +41,14 @@ if(b!=null&& b.equals("Register")){
 	String eIntime=request.getParameter("Intime");
 %>
 <jsp:useBean id="obj" class="com.zoho.EmployeeCode"/>
-<h3 align="center">
 <%
 	int r=obj.ExistingEmployeeInsert(eid, eIndate,eIntime);
 	out.print((r>0)?"Registered":"Not Registered");
 }
-%>
-
-<%	
 
 %>
+
+
 </h3>
 </form>
 </body>

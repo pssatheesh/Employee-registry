@@ -43,7 +43,10 @@
 <td><input type="reset" value="Clear All"></td>
 </tr>
 </table>
-<h3 align="center"><a href="LogoutPage.jsp">Logout</a></h3>
+<h3 align="center">
+<button><a href="VisitorView.jsp">Click Here to View !!!</a></button>
+<button><a href="LogoutPage.jsp">Logout</a></button></h3>
+
 <%
 String b=request.getParameter("btn");
 if(b!=null&& b.equals("Register")){
@@ -59,10 +62,7 @@ if(b!=null&& b.equals("Register")){
 <h3 align="center">
 <%
 	int r=obj.VisitorInsert(vid, vname, vreason, vmobile,vaddress,vIndate,vIntime);
-	out.print((r>0)?"Registered":"Not Registered");
-%>
-<a href="VisitorView.jsp">Click Here to View !!!</a>
-<%	
+	out.print((r>0)?"Registered":"Not Registered");	
 }
 %>
 </h3>

@@ -40,6 +40,8 @@
 </tr>
 </table>
 <h3 align="center"><a href="LogoutPage.jsp">Logout</a></h3>
+<h3 align="center">
+<a href="EmployeeView.jsp">Click Here to View !!!</a>
 <%
 String b=request.getParameter("btn");
 if(b!=null&& b.equals("Register")){
@@ -51,8 +53,7 @@ if(b!=null&& b.equals("Register")){
 	String eIntime=request.getParameter("Intime");
 %>
 <jsp:useBean id="obj" class="com.zoho.EmployeeCode"/>
-<h3 align="center">
-<a href="EmployeeView.jsp">Click Here to View !!!</a>
+
 <%
 	int r=obj.EmployeeInsert(eid, ename, emobile, ecompany,eIndate,eIntime);
 	out.print((r>0)?"Registered":"Not Registered");

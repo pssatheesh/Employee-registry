@@ -11,7 +11,7 @@
 <form>
 <table align="center">
 <tr><td><button><a href="EmployeeDetails.jsp">Profile Register</a></button></td></tr>
-<tr><td><button><a href="ExistingEmployee.jsp">Existing Employee</a></button></td></tr>
+<tr><td><button><a href="ExistingEmployeeDetails.jsp">Existing Employee</a></button></td></tr>
 <tr><td><button><a href="LogoutPage.jsp">Logout</a></button></td></tr>
 </table>
 </form>

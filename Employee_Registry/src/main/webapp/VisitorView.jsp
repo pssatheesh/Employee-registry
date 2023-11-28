@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>www.oops.com</title>
+<link rel="icon" href="C:\Users\welcome\Documents\pss.png">
 </head>
 <%@page import="java.util.Stack" %>
 <%@page import="com.zoho.Visitor" %>
@@ -25,6 +26,7 @@
 %>
 <h1 align="center">Registered Employee Details</h1>
 <button><a href="LogoutPage.jsp">Logout</a></button>
+<button align="right"><a href="VisitorDetails.jsp">Back</a></button>
 <br>
 <table align="center" border="1" rules="all" cellspacing="10" cellpadding="10">
 	<tr><th>Visitor ID</th><th>Visitor Name</th>

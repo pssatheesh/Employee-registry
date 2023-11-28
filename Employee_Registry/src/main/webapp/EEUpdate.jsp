@@ -35,8 +35,8 @@ if(b!=null && b.equals("Update")){
 	int eid=Integer.parseInt(request.getParameter("eid"));
 	String date=request.getParameter("Outdate");
 	String time=request.getParameter("Outtime");
-	int r=obj.EmployeeUpdate(eid, date,time);
-	RequestDispatcher rd=request.getRequestDispatcher("EmployeeView.jsp");
+	int r=obj.EEmployeeUpdate(eid, date,time);
+	RequestDispatcher rd=request.getRequestDispatcher("EEView.jsp");
 	rd.forward(request, response);
 	
 }	
